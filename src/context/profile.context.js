@@ -27,7 +27,7 @@ export const ProfileProvider = ({ children }) => {
           if (userRef) {
             userRef.off();
           }
-          setProfile(isLoading);
+          setProfile(null);
           setIsLoading(false);
         }
       });
