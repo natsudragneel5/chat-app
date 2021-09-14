@@ -13,7 +13,7 @@ const ChatRoomList = ({ aboveElHeight }) => {
       vertical
       reversed
       className="overflow-y-scroll custom-scroll"
-      style={{ height: `calc(100% -${aboveElHeight})` }}
+      style={{ height: `calc(100% -${aboveElHeight}px)` }}
       activeKey={location.pathname}
     >
       {!rooms && (

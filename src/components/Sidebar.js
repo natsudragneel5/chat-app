@@ -14,12 +14,12 @@ const Sidebar = () => {
   }, [topSidebarRef]);
   return (
     <div className="h-100 pt-2">
-      <div ref={topSidebarRef}>
+      <div className="h-100" ref={topSidebarRef}>
         <DashboardToggle />
         <CreateRoomBtnModal />
         <Divider>Join conversation</Divider>
+        <ChatRoomList aboveElHeight={height} />
       </div>
-      <ChatRoomList aboveElHeight={height} />
     </div>
   );
 };
