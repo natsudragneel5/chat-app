@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { useCurrentRoom } from "../../../context/curren-room.context";
 import { useMediaQuery } from "../../../misc/custom-hooks";
 import RoomInfoBtnModal from "./RoomInfoBtnModal";
+import EditRoomBtnDrawer from "./EditRoomBtnDrawer";
 
 const ChatTop = () => {
   const name = useCurrentRoom((v) => v.name);
+  const isAdmin = useCurrentRoom((v) => v.isAdmin);
   const isMobile = useMediaQuery(`(max-width: 992px)`);
   return (
     <div>
@@ -25,10 +27,15 @@ const ChatTop = () => {
           />
           <span className="text-dissappear">{name}</span>
         </h4>
-        <ButtonToolbar className="ws-nowrap"></ButtonToolbar>
+        <ButtonToolbar className="ws-nowrap">
+          {isAdmin && <EditRoomBtnDrawer />}
+        </ButtonToolbar>
       </div>
-      <div className="d-flex justify-context-between align-items-center">
-        <span>todo</span>
+      <div
+        className="d-flex justify-context-between"
+        style={{ position: "absolute", right: "10px" }}
+      >
+        <span></span>
         <RoomInfoBtnModal />
       </div>
     </div>
