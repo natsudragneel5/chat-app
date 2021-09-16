@@ -56,24 +56,29 @@ const AttachmentBtnModal = ({ afterUpload }) => {
         </Modal.Header>
         <Modal.Body>
           <Uploader
+            className="width-100"
             autoUpload={false}
             action=""
             fileList={fileList}
             onChange={onChange}
             multiple
             listType="picture-text"
-            className="width-100"
             disabled={isLoading}
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button block disabled={isLoading} onClick={onUpload}>
+          <Button
+            style={{ backgroundColor: "#008CBA" }}
+            block
+            disabled={isLoading}
+            onClick={onUpload}
+          >
             Send to chat
           </Button>
           <div className="text-right mt-2">
             <small>* only files less than 5 mb are allowed</small>
           </div>
-          <Button block onClick={close}>
+          <Button style={{ backgroundColor: "#f44336" }} block onClick={close}>
             Close
           </Button>
         </Modal.Footer>
